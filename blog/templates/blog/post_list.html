@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!Añadimos código css>
+{%load static%}
+<html>
+	<head>
+		<! Añadimos bootstrap>
+		<link rel = "stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" >
+		<link rel = "stylesheet" href = "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+		<link rel = "stylesheet" href = "{% static 'css/blog.css' %}">
+		
+	
+		<title> Mike's blog</title>
+		
+	</head>
+	
+	<body>
+		<div class = "page-header">
+			<h1><a href="/">Mike's Blog </a> </h1>
+		</div>
+		<div class = "content container">
+			<div class = "col-md-8"
+				<!mostramos los posts, el bucle muestra cada post de la lista, linebreaksbr convierte los saltos de linea en párrafos >
+				{%for post in posts %}  
+				<div class = "post">
+					<div class = "date">
+						<p>publicado: {{post.published_date}} </p>
+					</div>
+					<h1><a href = "/" >{{post.title}} </a> </h1>
+					<p> {{post.text|linebreaksbr}} </p>
+					{%endfor%}
+				</div>
+			</div>
+		</div>
+	</body
+
+</html>
